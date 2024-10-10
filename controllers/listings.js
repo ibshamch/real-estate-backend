@@ -5,7 +5,7 @@ const getAllListings = (req, res) => {
     data: [
       {
         title: "Spanish House",
-        property:"House",
+        property: "House",
         size: "5 Marla",
         type: "Sale",
         price: "$800,000",
@@ -16,6 +16,8 @@ const getAllListings = (req, res) => {
           location: "DHA",
           phase: "Phase 6",
           block: "Block E",
+          lat: "",
+          long: "",
         },
         builtIn: 1969,
         features: {
