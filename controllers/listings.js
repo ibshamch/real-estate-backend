@@ -2,19 +2,19 @@ const listingModel = require("./../model/listings");
 
 
 
-const getAllListings = (req, res) => {
+const getAllListings = async(req, res) => {
   /*
   1. success : true /false 
   2. message : Request successfully done etc
   3. data : from database
   */ 
-
+  const listings = await listingModel.find();
   
   res.status(200).json(
       {
         success : true,
         message:"All listings fetched successfully from the database",
-        data 
+        data : listings
       }
   );
 };
