@@ -1,50 +1,54 @@
+const listingModel = require("./../model/listings");
+
+
+
 const getAllListings = (req, res) => {
-  res.status(200).json({
-    status: "success",
-    message: "Listings fetched successfully",
-    data: [
+  /*
+  1. success : true /false 
+  2. message : Request successfully done etc
+  3. data : from database
+  */ 
+
+  
+  res.status(200).json(
       {
-        title: "Spanish House",
-        property: "House",
-        size: "5 Marla",
-        type: "Sale",
-        price: "$800,000",
-        location: {
-          city: "Lahore",
-          state: "Punjab",
-          country: "Pakistan",
-          location: "DHA",
-          phase: "Phase 6",
-          block: "Block E",
-          lat: "",
-          long: "",
-        },
-        builtIn: 1969,
-        features: {
-          bathrooms: 4,
-          bedrooms: 3,
-          furnished: true,
-          corner: true,
-        },
-        details: "Beatiful Spanish House in Lahore DHA",
-        agentDetails: {
-          name: "Sadaqat Ali",
-          contact: "+923224688760",
-          whatsapp: "+923224688760",
-        },
-        isFeatured: true,
-        imageLinks: {
-          mainImage: "https://example.com/house1.jpg",
-          galleryImages: [
-            "https://example.com/house1-1.jpg",
-            "https://example.com/house1-2.jpg",
-          ],
-        },
-      },
-    ],
-  });
+        success : true,
+        message:"All listings fetched successfully from the database",
+        data 
+      }
+  );
 };
+
+
+const createNewListing = async(req, res) => {
+ // Ye function database ke andr aik new listing daalega object form main 
+try {
+  const listing = await listingModel.create(req.body); // Database ma new listing object banao 
+  
+  res.status(201).json({
+    success: true,
+    message:"New listing created successfully",
+    data: listing
+  })
+
+} catch (error) {
+  res.status(400).json({
+    success:false,
+    message: "Error creating new listing",
+  })  
+}
+
+ 
+
+
+
+
+
+}
+
+
 
 module.exports = {
   getAllListings,
+  createNewListing
 };

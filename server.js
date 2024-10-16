@@ -12,6 +12,9 @@ dotenv.config({ path: "./config/config.env" });
 connectDB();
 
 const app = express();
+
+app.use(express.json()) // koi bhi request agar ati hai usko json main convert krdo
+
 // Ye app ab request accept kr sakti hai or response bhi de skti hai . Ye app variable hamara server hai .
 
 if (process.env.NODE_ENV === "development") {
@@ -24,7 +27,13 @@ app.use("/api/satisfiedClients", testomonialsRouter);
 
 const PORT = process.env.PORT || 8000;
 
-app.listen(
+const server = app.listen(
   PORT,
   console.log(`Server running at ${PORT} Port in ${process.env.NODE_ENV}`)
 );
+
+
+process.on("unhandledRejection",(err,promise)=> {
+  console.log(`Error ${err.message}`)
+  server.close(()=> process.exit(1));
+})

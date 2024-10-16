@@ -4,6 +4,8 @@ const mongoose = require("mongoose")
 const connectDB =  async () => {
     // first line : mujhe promise nai do , mujhe data do .
     const conn = await mongoose.connect(process.env.MONGO_URI);  
+    // yaha pe zehn ma rakho process.env.mongo_url dependency hai connectDB function
+    
     console.log(`Mongo Connected: ${conn.connection.host}`)
 }
 

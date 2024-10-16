@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { getAllListings } = require("../controllers/listings");
+const { getAllListings,createNewListing } = require("../controllers/listings");
+
 router.get("/", getAllListings);
+
+router.post("/createNewListing",createNewListing);
 
 module.exports = router;
 
