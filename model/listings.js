@@ -4,7 +4,8 @@ const listingsSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-  },
+  }
+  ,
   property: {
     type: String,
     required: true,

@@ -1,10 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const { getAllListings,createNewListing } = require("../controllers/listings");
+const { getAllListings,createNewListing,updateListing,deleteListing ,getListingsByAgentName} = require("../controllers/listings");
 
 router.get("/", getAllListings);
 
+router.get("/:agentName",getListingsByAgentName);
+
 router.post("/createNewListing",createNewListing);
+
+router.put("/updateListing/:id",updateListing)
+
+router.delete("/deleteListing/:id",deleteListing)
+
+
 
 module.exports = router;
 
