@@ -73,12 +73,8 @@ const listingsSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    contact: {
-      type: String,  // Changed to string for better phone number handling
-      required: true,
-    },
-    whatsapp: {
-      type: String,  // Changed to string for international phone numbers
+    number: {
+      type: String,  
       required: true,
     },
   },

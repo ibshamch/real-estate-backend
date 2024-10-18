@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db")
 const listingRouter = require("./route/listings");
+const agentRouter = require("./route/agents")
 const testomonialsRouter = require("./route/testomonials");
 const morgan = require("morgan");
 
@@ -24,6 +25,9 @@ if (process.env.NODE_ENV === "development") {
 // Server ko batao ke router object ma jo routes hain uska use krle
 app.use("/api/listings", listingRouter);
 app.use("/api/satisfiedClients", testomonialsRouter);
+
+app.use("/api/agents" , agentRouter)
+
 
 const PORT = process.env.PORT || 8000;
 

@@ -19,6 +19,31 @@ const getAllListings = async(req, res) => {
   );
 };
 
+const getListing = async (req, res) => {
+  try {
+    const listing = await listingModel.findById(req.params.id);
+
+    if (!listing) {
+      return res.status(404).json({
+        success: false,
+        message: "Listing not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "One listing fetched successfully",
+      data: listing,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error fetching listing",
+      error: error.message, // Including error details can help during debugging
+    });
+  }
+};
+
 
 
 
@@ -111,5 +136,6 @@ module.exports = {
   createNewListing,
   updateListing,
   deleteListing,
-  getListingsByAgentName
+  getListingsByAgentName,
+  getListing
 };
