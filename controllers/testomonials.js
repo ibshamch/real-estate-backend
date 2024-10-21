@@ -1,4 +1,4 @@
-const getAllTestomonials = (req, res) => {
+const getAllTestomonials = (req, res,next) => {
   res.status(200).json({
     status: "success",
     message: "Satisfied clients fetched successfully",

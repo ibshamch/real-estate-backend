@@ -1,25 +1,31 @@
+const ErrorResponse = require("./../utils/errorResponse");
 const listingModel = require("./../model/listings");
 
 
-
-const getAllListings = async(req, res) => {
+const getAllListings = async(req, res,next) => {
   /*
   1. success : true /false 
   2. message : Request successfully done etc
   3. data : from database
   */ 
-  const listings = await listingModel.find();
-  
-  res.status(200).json(
-      {
-        success : true,
-        message:"All listings fetched successfully from the database",
-        data : listings
-      }
-  );
+
+
+  try {
+    const listings = await listingModel.find();
+    
+    res.status(200).json(
+        {
+          success : true,
+          message:"All listings fetched successfully from the database",
+          data : listings
+        }
+    );
+  } catch (error) {
+      next(new ErrorResponse("Server Error from Error Response", 404))
+  }
 };
 
-const getListing = async (req, res) => {
+const getListing = async (req, res,next) => {
   try {
     const listing = await listingModel.findById(req.params.id);
 
@@ -47,7 +53,7 @@ const getListing = async (req, res) => {
 
 
 
-const createNewListing = async(req, res) => {
+const createNewListing = async(req, res,next) => {
  // Ye function database ke andr aik new listing daalega object form main 
 try {
   const listing = await listingModel.create(req.body); // Database ma new listing object banao 
@@ -70,7 +76,7 @@ try {
 }
 
 
-const updateListing = async(req,res) => {
+const updateListing = async(req,res,next) => {
   try {
     const listing = await listingModel.findByIdAndUpdate((req.params.id), req.body , {
       new:true,
@@ -91,7 +97,7 @@ const updateListing = async(req,res) => {
 }
 
 
-const deleteListing = async(req,res) => {
+const deleteListing = async(req,res,next) => {
   const listing = await listingModel.findByIdAndDelete(req.params.id);
   if(!listing){
     res.status(400).json({
@@ -106,7 +112,7 @@ const deleteListing = async(req,res) => {
   }
 }
 
-const getListingsByAgentName = async (req, res) => {
+const getListingsByAgentName = async (req, res,next) => {
   try {
     const agentName = req.params.agentName;
     console.log(agentName)
