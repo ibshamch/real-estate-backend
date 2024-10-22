@@ -21,7 +21,7 @@ const getAllListings = async(req, res,next) => {
         }
     );
   } catch (error) {
-      next(new ErrorResponse("Server Error from Error Response", 404))
+      next(new ErrorResponse("Server Error from Error Response", 500))
   }
 };
 
@@ -42,11 +42,7 @@ const getListing = async (req, res,next) => {
       data: listing,
     });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: "Error fetching listing",
-      error: error.message, // Including error details can help during debugging
-    });
+    next(new ErrorResponse("Server Error from Error Response", 500))
   }
 };
 
@@ -65,10 +61,7 @@ try {
   })
 
 } catch (error) {
-  res.status(400).json({
-    success:false,
-    message: "Error creating new listing",
-  })  
+  next(new ErrorResponse("Server Error from Error Response", 500))
 }
 
 
@@ -89,10 +82,8 @@ const updateListing = async(req,res,next) => {
     })
 
   } catch (error) {
-    res.status(400).json({
-      success:false,
-      message: "Error creating new listing",
-    })  
+    next(new ErrorResponse("Server Error from Error Response", 500))
+
   }
 }
 
@@ -100,10 +91,7 @@ const updateListing = async(req,res,next) => {
 const deleteListing = async(req,res,next) => {
   const listing = await listingModel.findByIdAndDelete(req.params.id);
   if(!listing){
-    res.status(400).json({
-      success: false, 
-      message: "No Listing Found"
-    })
+    next(new ErrorResponse("Server Error from Error Response", 500))
   }else{
     res.status(200).json({
       success: true, 
@@ -123,14 +111,13 @@ const getListingsByAgentName = async (req, res,next) => {
 
     // Check if any listings were found
     if (listings.length === 0) {
-      return res.status(404).json({ message: 'No listings found posted by this agent.' });
+      next(new ErrorResponse("No Listing Found Error from Error Response", 404))
     }
 
     // Return the found listings
     return res.status(200).json(listings);
   } catch (error) {
-    console.error('Error fetching listings:', error);
-    return res.status(500).json({ message: 'Server error. Please try again later.' });
+    next(new ErrorResponse("Server Error from Error Response", 500))
   }
 };
 
