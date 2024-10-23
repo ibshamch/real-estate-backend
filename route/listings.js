@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { getAllListings,createNewListing,updateListing,deleteListing ,getListingsByAgentId,getListing} = require("../controllers/listings");
+const { getAllListings,createNewListing,updateListing,deleteListing,deleteAllListings ,getListingsByAgentId,getListing} = require("../controllers/listings");
 
 router.get("/", getAllListings);
 
 
-router.get("/agents/:agentId",getListingsByAgentName);
+router.get("/agents/:agentId",getListingsByAgentId);
 
 router.get("/:id",getListing)
 
@@ -13,7 +13,9 @@ router.post("/createNewListing",createNewListing);
 
 router.put("/updateListing/:id",updateListing)
 
-router.delete("/deleteListing/:id",deleteListing)
+router
+  .delete("/deleteListing/:id", deleteListing)
+  .delete("/deleteAllListings", deleteAllListings);
 
 
 

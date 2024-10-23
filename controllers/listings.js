@@ -98,6 +98,27 @@ const deleteListing = asyncHandler(
   }  
 )
 
+const deleteAllListings = asyncHandler(
+  async(req,res,next) => {
+   const result =  await listingModel.deleteMany();
+
+   if(result.length === 0) {
+    res.status(400).json({
+      success : false,
+      message : "No Listing Found to Delete"
+    })
+   }
+
+   res.status(200).json({
+    success : true,
+    message : "All Listings Delete Successfully"
+  })
+
+  }
+)
+
+
+
 
 
 const getListingsByAgentId = 
@@ -130,5 +151,6 @@ module.exports = {
   updateListing,
   deleteListing,
   getListingsByAgentId,
-  getListing
+  getListing,
+  deleteAllListings
 };
