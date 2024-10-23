@@ -73,6 +73,10 @@ const listingsSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    id : {
+      type: String , 
+      required : true
+    },
     number: {
       type: String,  
       required: true,

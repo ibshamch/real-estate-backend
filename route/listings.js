@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { getAllListings,createNewListing,updateListing,deleteListing ,getListingsByAgentName,getListing} = require("../controllers/listings");
+const { getAllListings,createNewListing,updateListing,deleteListing ,getListingsByAgentId,getListing} = require("../controllers/listings");
 
 router.get("/", getAllListings);
 
 
-router.get("/agents/:agentName",getListingsByAgentName);
+router.get("/agents/:agentId",getListingsByAgentName);
 
 router.get("/:id",getListing)
 
