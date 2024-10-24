@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const slugify = require("slugify");
 const listingsSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -10,6 +10,7 @@ const listingsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  slug : String,
   size: {
     type: String,
     required: true,
@@ -98,4 +99,23 @@ const listingsSchema = new mongoose.Schema({
   },
 });
 
+
+listingsSchema.pre("save",function(next){
+this.slug = slugify(this.title, {lower : true})
+next()
+});
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = mongoose.model('Listing', listingsSchema);
+
+
