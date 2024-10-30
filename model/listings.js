@@ -109,13 +109,6 @@ next()
 
 
 
-
-
-
-
-
-
-
 module.exports = mongoose.model('Listing', listingsSchema);
 
 
