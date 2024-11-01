@@ -35,7 +35,6 @@ const listingsSchema = new mongoose.Schema({
     },
     state: {
       type: String,
-      required: true,
     },
     country: String,
     zipcode: String,
@@ -124,7 +123,7 @@ this.location = {
   coordinates : [loc[0].longitude , loc[0].latitude],
   formattedAddress : loc[0].formattedAddress,
   street : loc[0].streetName,
-  city : loc[0].city,
+  city : loc[0].city || this.location.city,
   state : loc[0].state,
   zipcode : loc[0].zipcode,
   country : loc[0].country,

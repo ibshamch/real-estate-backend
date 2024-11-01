@@ -10,8 +10,8 @@ const listingsModel = require("./model/listings");
 
 // Connect to DB
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('DB Connected'))
-  .catch(err => console.error(err));
+    .then(() => console.log('DB Connected'))
+    .catch(err => console.error(err));
 
 // Read the JSON Files
 const listings = JSON.parse(fs.readFileSync(`${__dirname}/data/listings.json`, 'utf-8'));

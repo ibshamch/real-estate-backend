@@ -1,6 +1,7 @@
 const ErrorResponse = require("./../utils/errorResponse");
 const listingModel = require("./../model/listings");
 const asyncHandler = require("./../middleware/async");
+const geocoder = require("../utils/geocoder");
 
 const getAllListings =   asyncHandler(
   async(req, res,next) => {
@@ -144,6 +145,53 @@ asyncHandler(
 
 
 
+// @desc  Get listings within a radius 
+// @route GET /api/listings/radius/:zipcode/:distance
+// @access Private
+
+
+const getListingsInRadius = asyncHandler(
+  async(req,res,next) => {
+    const {zipcode , distance} = req.params;
+    // Get lat/long from geocoder 
+    const loc = await geocoder.geocode(zipcode);
+    console.log(loc);
+
+    const lat = loc[0].latitude;
+    const long = loc[0].longitude;
+
+    // Calculate the radious using radians
+    // Divide distance by radius of Earth
+    // Earth Radius = 3,963 miles / 6,378.1 km 
+    
+    const radius = distance / 3963; 
+
+    const listings = await listingModel.find({location : {
+      $geoWithin: {$centerSphere: [ [ long, lat ] , radius ]}
+    }});
+
+
+    res.status(200).json({
+      success: true,
+      count: listings.length,
+      data : listings
+    });
+  }
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = {
   getAllListings,
@@ -152,5 +200,7 @@ module.exports = {
   deleteListing,
   getListingsByAgentId,
   getListing,
-  deleteAllListings
+  deleteAllListings,
+  getListingsInRadius,
+
 };

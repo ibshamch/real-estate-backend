@@ -1,9 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const { getAllListings,createNewListing,updateListing,deleteListing,deleteAllListings ,getListingsByAgentId,getListing} = require("../controllers/listings");
+const { getAllListings,createNewListing,updateListing,deleteListing,deleteAllListings ,getListingsByAgentId,getListing,  getListingsInRadius} = require("../controllers/listings");
 
 router.get("/", getAllListings);
 
+router
+.route("/radius/:zipcode/:distance")
+.get(getListingsInRadius)
 
 router.get("/agents/:agentId",getListingsByAgentId);
 
