@@ -43,6 +43,9 @@ const listingsSchema = new mongoose.Schema({
       type: String,
       enum: ["Point"],
     },
+    formattedAddress: {
+      type:String
+    },
     coordinates: {
       type : [Number],
       index: "2dsphere"

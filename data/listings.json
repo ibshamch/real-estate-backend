@@ -1,197 +1,217 @@
-{
-  "status": "success",
-  "message": "Listings fetched successfully",
-  "data": [
-    {
-      "title": "Spanish House",
-      "property": "House",
-      "size": "5 Marla",
-      "type": "Sale",
-      "price": "$800,000",
-      "location": {
-        "city": "Lahore",
-        "state": "Punjab",
-        "country": "Pakistan",
-        "location": "DHA",
-        "phase": "Phase 6",
-        "block": "Block E",
-        "lat": "",
-        "long": ""
-      },
-      "builtIn": 1969,
-      "features": {
-        "bathrooms": 4,
-        "bedrooms": 3,
-        "furnished": true,
-        "corner": true
-      },
-      "details": "Beautiful Spanish House in Lahore DHA",
-      "agentDetails": {
-        "name": "Sadaqat Ali",
-        "contact": "+923224688760",
-        "whatsapp": "+923224688760"
-      },
-      "isFeatured": true,
-      "imageLinks": {
-        "mainImage": "https://example.com/house1.jpg",
-        "galleryImages": [
-          "https://example.com/house1-1.jpg",
-          "https://example.com/house1-2.jpg"
-        ]
-      }
+[
+  {
+    "title": "Charming Family Home",
+    "property": "Residential",
+    "size": "1500 sqft",
+    "type": "House",
+    "price": "$320,000",
+    "address": "123 Elm St, Anytown, CA",
+    "location": {
+      "city": "Anytown",
+      "state": "CA",
+      "country": "USA",
+      "zipcode": "90210",
+      "type": "Point",
+      "coordinates": [-118.4062, 34.0901],
+      "formattedAddress": "123 Elm St, Anytown, CA 90210",
+      "street": "Elm St",
+      "phase": "Phase 1",
+      "block": "Block A",
+      "lat": "34.0901",
+      "long": "-118.4062"
     },
-    {
-      "title": "Modern Apartment",
-      "property": "Apartment",
-      "size": "3 Marla",
-      "type": "Rent",
-      "price": "$1,200/month",
-      "location": {
-        "city": "Karachi",
-        "state": "Sindh",
-        "country": "Pakistan",
-        "location": "Clifton",
-        "phase": "Phase 2",
-        "block": "Block A",
-        "lat": "",
-        "long": ""
-      },
-      "builtIn": 2010,
-      "features": {
-        "bathrooms": 2,
-        "bedrooms": 2,
-        "furnished": false,
-        "corner": false
-      },
-      "details": "Luxurious apartment in Clifton with sea view",
-      "agentDetails": {
-        "name": "Ahmed Khan",
-        "contact": "+923334567890",
-        "whatsapp": "+923334567890"
-      },
-      "isFeatured": false,
-      "imageLinks": {
-        "mainImage": "https://example.com/apartment1.jpg",
-        "galleryImages": [
-          "https://example.com/apartment1-1.jpg",
-          "https://example.com/apartment1-2.jpg"
-        ]
-      }
+    "builtIn": 2015,
+    "features": {
+      "bathrooms": 2,
+      "bedrooms": 3,
+      "furnished": true,
+      "corner": false
     },
-    {
-      "title": "Farmhouse Retreat",
-      "property": "Farmhouse",
-      "size": "10 Kanal",
-      "type": "Sale",
-      "price": "$2,500,000",
-      "location": {
-        "city": "Islamabad",
-        "state": "Federal",
-        "country": "Pakistan",
-        "location": "Bani Gala",
-        "phase": "",
-        "block": "",
-        "lat": "",
-        "long": ""
-      },
-      "builtIn": 2015,
-      "features": {
-        "bathrooms": 5,
-        "bedrooms": 4,
-        "furnished": true,
-        "corner": true
-      },
-      "details": "Beautiful farmhouse with vast gardens and modern amenities",
-      "agentDetails": {
-        "name": "Zeeshan Tariq",
-        "contact": "+923224567890",
-        "whatsapp": "+923224567890"
-      },
-      "isFeatured": true,
-      "imageLinks": {
-        "mainImage": "https://example.com/farmhouse1.jpg",
-        "galleryImages": [
-          "https://example.com/farmhouse1-1.jpg",
-          "https://example.com/farmhouse1-2.jpg"
-        ]
-      }
+    "details": "A charming family home located in a quiet neighborhood.",
+    "agentDetails": {
+      "name": "Alice Johnson",
+      "id": "agent001",
+      "number": "555-1234"
     },
-    {
-      "title": "Luxury Villa",
-      "property": "Villa",
-      "size": "1 Kanal",
-      "type": "Sale",
-      "price": "$1,200,000",
-      "location": {
-        "city": "Lahore",
-        "state": "Punjab",
-        "country": "Pakistan",
-        "location": "Bahria Town",
-        "phase": "Phase 4",
-        "block": "Block C",
-        "lat": "",
-        "long": ""
-      },
-      "builtIn": 2020,
-      "features": {
-        "bathrooms": 6,
-        "bedrooms": 5,
-        "furnished": true,
-        "corner": false
-      },
-      "details": "State-of-the-art villa in a prime location",
-      "agentDetails": {
-        "name": "Ali Zafar",
-        "contact": "+923224998765",
-        "whatsapp": "+923224998765"
-      },
-      "isFeatured": true,
-      "imageLinks": {
-        "mainImage": "https://example.com/villa1.jpg",
-        "galleryImages": [
-          "https://example.com/villa1-1.jpg",
-          "https://example.com/villa1-2.jpg"
-        ]
-      }
-    },
-    {
-      "title": "Penthouse with Panoramic View",
-      "property": "Penthouse",
-      "size": "4 Marla",
-      "type": "Rent",
-      "price": "$3,500/month",
-      "location": {
-        "city": "Karachi",
-        "state": "Sindh",
-        "country": "Pakistan",
-        "location": "Sea View",
-        "phase": "",
-        "block": "",
-        "lat": "",
-        "long": ""
-      },
-      "builtIn": 2005,
-      "features": {
-        "bathrooms": 3,
-        "bedrooms": 3,
-        "furnished": true,
-        "corner": true
-      },
-      "details": "Luxury penthouse with 360-degree city views",
-      "agentDetails": {
-        "name": "Bilal Hussain",
-        "contact": "+923229876543",
-        "whatsapp": "+923229876543"
-      },
-      "isFeatured": false,
-      "imageLinks": {
-        "mainImage": "https://example.com/penthouse1.jpg",
-        "galleryImages": [
-          "https://example.com/penthouse1-1.jpg",
-          "https://example.com/penthouse1-2.jpg"
-        ]
-      }
+    "isFeatured": true,
+    "imageLinks": {
+      "mainImage": "https://example.com/images/charming_family_home.jpg",
+      "galleryImages": [
+        "https://example.com/images/charming_family_home1.jpg",
+        "https://example.com/images/charming_family_home2.jpg"
+      ]
     }
-  ]
-}
-
+  },
+  {
+    "title": "Modern Apartment",
+    "property": "Residential",
+    "size": "950 sqft",
+    "type": "Apartment",
+    "price": "$450,000",
+    "address": "456 Oak Rd, Big City, NY",
+    "location": {
+      "city": "Big City",
+      "state": "NY",
+      "country": "USA",
+      "zipcode": "10001",
+      "type": "Point",
+      "coordinates": [-73.9352, 40.7306],
+      "formattedAddress": "456 Oak Rd, Big City, NY 10001",
+      "street": "Oak Rd",
+      "phase": "Phase 2",
+      "block": "Block B",
+      "lat": "40.7306",
+      "long": "-73.9352"
+    },
+    "builtIn": 2020,
+    "features": {
+      "bathrooms": 1,
+      "bedrooms": 1,
+      "furnished": true,
+      "corner": true
+    },
+    "details": "A modern apartment with stunning city views.",
+    "agentDetails": {
+      "name": "Bob Smith",
+      "id": "agent002",
+      "number": "555-5678"
+    },
+    "isFeatured": false,
+    "imageLinks": {
+      "mainImage": "https://example.com/images/modern_apartment.jpg",
+      "galleryImages": [
+        "https://example.com/images/modern_apartment1.jpg",
+        "https://example.com/images/modern_apartment2.jpg"
+      ]
+    }
+  },
+  {
+    "title": "Luxury Condo",
+    "property": "Residential",
+    "size": "1200 sqft",
+    "type": "Condo",
+    "price": "$750,000",
+    "address": "789 Pine St, Luxury Town, FL",
+    "location": {
+      "city": "Luxury Town",
+      "state": "FL",
+      "country": "USA",
+      "zipcode": "33101",
+      "type": "Point",
+      "coordinates": [-80.1918, 25.7617],
+      "formattedAddress": "789 Pine St, Luxury Town, FL 33101",
+      "street": "Pine St",
+      "phase": "Phase 3",
+      "block": "Block C",
+      "lat": "25.7617",
+      "long": "-80.1918"
+    },
+    "builtIn": 2022,
+    "features": {
+      "bathrooms": 2,
+      "bedrooms": 2,
+      "furnished": false,
+      "corner": false
+    },
+    "details": "A luxury condo with top-of-the-line amenities.",
+    "agentDetails": {
+      "name": "Charlie Davis",
+      "id": "agent003",
+      "number": "555-9101"
+    },
+    "isFeatured": true,
+    "imageLinks": {
+      "mainImage": "https://example.com/images/luxury_condo.jpg",
+      "galleryImages": [
+        "https://example.com/images/luxury_condo1.jpg",
+        "https://example.com/images/luxury_condo2.jpg"
+      ]
+    }
+  },
+  {
+    "title": "Cozy Studio",
+    "property": "Residential",
+    "size": "600 sqft",
+    "type": "Studio",
+    "price": "$200,000",
+    "address": "101 Maple St, Smallville, TX",
+    "location": {
+      "city": "Smallville",
+      "state": "TX",
+      "country": "USA",
+      "zipcode": "75001",
+      "type": "Point",
+      "coordinates": [-97.7431, 30.2672],
+      "formattedAddress": "101 Maple St, Smallville, TX 75001",
+      "street": "Maple St",
+      "phase": "Phase 4",
+      "block": "Block D",
+      "lat": "30.2672",
+      "long": "-97.7431"
+    },
+    "builtIn": 2018,
+    "features": {
+      "bathrooms": 1,
+      "bedrooms": 0,
+      "furnished": true,
+      "corner": false
+    },
+    "details": "A cozy studio in a vibrant area.",
+    "agentDetails": {
+      "name": "Diana Clark",
+      "id": "agent004",
+      "number": "555-2345"
+    },
+    "isFeatured": false,
+    "imageLinks": {
+      "mainImage": "https://example.com/images/cozy_studio.jpg",
+      "galleryImages": [
+        "https://example.com/images/cozy_studio1.jpg",
+        "https://example.com/images/cozy_studio2.jpg"
+      ]
+    }
+  },
+  {
+    "title": "Spacious Loft",
+    "property": "Commercial",
+    "size": "2500 sqft",
+    "type": "Loft",
+    "price": "$950,000",
+    "address": "202 Birch Ave, Metropolis, NY",
+    "location": {
+      "city": "Metropolis",
+      "state": "NY",
+      "country": "USA",
+      "zipcode": "10002",
+      "type": "Point",
+      "coordinates": [-73.9917, 40.7128],
+      "formattedAddress": "202 Birch Ave, Metropolis, NY 10002",
+      "street": "Birch Ave",
+      "phase": "Phase 5",
+      "block": "Block E",
+      "lat": "40.7128",
+      "long": "-73.9917"
+    },
+    "builtIn": 2015,
+    "features": {
+      "bathrooms": 2,
+      "bedrooms": 0,
+      "furnished": false,
+      "corner": true
+    },
+    "details": "A spacious loft perfect for creative work or office space.",
+    "agentDetails": {
+      "name": "Ethan White",
+      "id": "agent005",
+      "number": "555-6789"
+    },
+    "isFeatured": true,
+    "imageLinks": {
+      "mainImage": "https://example.com/images/spacious_loft.jpg",
+      "galleryImages": [
+        "https://example.com/images/spacious_loft1.jpg",
+        "https://example.com/images/spacious_loft2.jpg"
+      ]
+    }
+  }
+]
