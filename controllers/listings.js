@@ -11,12 +11,54 @@ const getAllListings =   asyncHandler(
     3. data : from database
     */ 
 
-      const listings = await listingModel.find();
+
+    // Advanced filtering : 
+    let query;
+
+    // Copy req.query
+    const reqQuery = { ...req.query};
+
+    // Feilds to exclude 
+    const removeFields = ['select','sort']; 
+
+    //Loop over removeFields and delete them from reqQuery 
+    removeFields.forEach(param => delete reqQuery[param])
+
+
+// Create Query String
+    let queryStr = JSON.stringify(reqQuery); 
+// Creating Operators $gt $gte 
+    queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
+
+// Finding resource
+    query = listingModel.find(JSON.parse(queryStr));
+
+
+// Select Fields 
+if(req.query.select){
+  console.log(req.query.select)
+  const fields = req.query.select.split(',').join(" ")
+  console.log(fields)
+  query = query.select(fields);
+}
+
+//Sort
+if(req.query.sort){
+  const sortBy = req.query.sort.split(",").join('');
+  query = query.sort(sortBy);
+}else{
+query = query.sort('-createdAt')
+}
+
+
+    // Executing the query
+      const listings = await query;
       
       res.status(200).json(
           {
             success : true,
             message:"All listings fetched successfully from the database",
+            count: listings.length,
             data : listings
           }
       );
@@ -179,6 +221,12 @@ const getListingsInRadius = asyncHandler(
   }
 )
 
+
+
+
+
+
+// Advanced Filtering 
 
 
 

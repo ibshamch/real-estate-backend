@@ -4,7 +4,7 @@
     "property": "Residential",
     "size": "1500 sqft",
     "type": "House",
-    "price": "$320,000",
+    "price": 320000,
     "address": "123 Elm St, Los Angeles, CA",
     "location": {
       "city": "Los Angeles",
@@ -47,7 +47,7 @@
     "property": "Residential",
     "size": "950 sqft",
     "type": "Apartment",
-    "price": "$450,000",
+    "price": 450000,
     "address": "456 Oak Rd, New York, NY",
     "location": {
       "city": "New York",
@@ -90,7 +90,7 @@
     "property": "Residential",
     "size": "1200 sqft",
     "type": "Condo",
-    "price": "$750,000",
+    "price": 750000,
     "address": "789 Pine St, Miami, FL",
     "location": {
       "city": "Miami",
@@ -133,7 +133,7 @@
     "property": "Residential",
     "size": "600 sqft",
     "type": "Studio",
-    "price": "$200,000",
+    "price": 200000,
     "address": "101 Maple St, Austin, TX",
     "location": {
       "city": "Austin",
@@ -176,7 +176,7 @@
     "property": "Commercial",
     "size": "2500 sqft",
     "type": "Loft",
-    "price": "$950,000",
+    "price": 950000,
     "address": "202 Birch Ave, Brooklyn, NY",
     "location": {
       "city": "Brooklyn",

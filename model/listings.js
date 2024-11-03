@@ -21,7 +21,7 @@ const listingsSchema = new mongoose.Schema({
     required: true,
   },
   price: {
-    type: String,  // String to handle currency symbols or time periods
+    type: Number,  // String to handle currency symbols or time periods
     required: true,
   },
   address : {
