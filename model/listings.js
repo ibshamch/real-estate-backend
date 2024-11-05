@@ -118,20 +118,22 @@ next()
 //Geocode & create location field 
 listingsSchema.pre("save", async function(next){
 const loc = await geocoder.geocode(this.address);
-this.location = {
-  type : "Point", 
-  coordinates : [loc[0].longitude , loc[0].latitude],
-  formattedAddress : loc[0].formattedAddress,
-  street : loc[0].streetName,
-  city : loc[0].city || this.location.city,
-  state : loc[0].state,
-  zipcode : loc[0].zipcode,
-  country : loc[0].country,
-}
+ if (loc.length > 0) {
+        this.location = {
+            type: "Point", 
+            coordinates: [loc[0].longitude, loc[0].latitude],
+            formattedAddress: loc[0].formattedAddress,
+            street: loc[0].streetName,
+            city: loc[0].city || this.location.city,
+            state: loc[0].state,
+            zipcode: loc[0].zipcode,
+            country: loc[0].country,
+        };
+    } else {
+        console.log('No location found for address:', this.address);
+    }
 
 
-console.log(this.address);
-console.log(this.location);
 
 // do not save address in database : 
 this.address = undefined;

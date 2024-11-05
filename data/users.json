@@ -1,0 +1,55 @@
+[
+    {
+      "_id": "60c72b2f9f1b2c001f1d234a",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "hashedPassword123",
+      "createdAt": "2024-11-06T12:00:00Z",
+      "listings": [
+        "60c72b2f9f1b2c001f1d2345"
+      ]
+    },
+    {
+      "_id": "60c72b2f9f1b2c001f1d234b",
+      "name": "Bob Brown",
+      "email": "bob.brown@example.com",
+      "password": "hashedPassword456",
+      "createdAt": "2024-11-06T12:10:00Z",
+      "listings": [
+        "60c72b2f9f1b2c001f1d2346",
+        "60c72b2f9f1b2c001f1d2347"
+      ]
+    },
+    {
+      "_id": "60c72b2f9f1b2c001f1d234c",
+      "name": "Chris Green",
+      "email": "chris.green@example.com",
+      "password": "hashedPassword789",
+      "createdAt": "2024-11-06T12:20:00Z",
+      "listings": [
+        "60c72b2f9f1b2c001f1d2348"
+      ]
+    },
+    {
+      "_id": "60c72b2f9f1b2c001f1d234d",
+      "name": "David Smith",
+      "email": "david.smith@example.com",
+      "password": "hashedPassword101112",
+      "createdAt": "2024-11-06T12:30:00Z",
+      "listings": [
+        "60c72b2f9f1b2c001f1d2349"
+      ]
+    },
+    {
+      "_id": "60c72b2f9f1b2c001f1d234e",
+      "name": "Emily White",
+      "email": "emily.white@example.com",
+      "password": "hashedPassword131415",
+      "createdAt": "2024-11-06T12:40:00Z",
+      "listings": [
+        "60c72b2f9f1b2c001f1d2345",
+        "60c72b2f9f1b2c001f1d2347"
+      ]
+    }
+  ]
+  

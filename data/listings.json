@@ -1,217 +1,202 @@
 [
   {
-    "title": "Charming Family Home",
-    "property": "Residential",
-    "size": "1500 sqft",
-    "type": "House",
-    "price": 320000,
-    "address": "123 Elm St, Los Angeles, CA",
-    "location": {
-      "city": "Los Angeles",
-      "state": "CA",
-      "country": "USA",
-      "zipcode": "90001",
-      "type": "Point",
-      "coordinates": [-118.2479, 34.0522],
-      "formattedAddress": "123 Elm St, Los Angeles, CA 90001",
-      "street": "Elm St",
-      "phase": "Phase 1",
-      "block": "Block A",
-      "lat": "34.0522",
-      "long": "-118.2479"
-    },
-    "builtIn": 2015,
-    "features": {
-      "bathrooms": 2,
-      "bedrooms": 3,
-      "furnished": true,
-      "corner": false
-    },
-    "details": "A charming family home located in a quiet neighborhood.",
-    "agentDetails": {
-      "name": "Alice Johnson",
-      "id": "agent001",
-      "number": "555-1234"
-    },
-    "isFeatured": true,
-    "imageLinks": {
-      "mainImage": "https://example.com/images/charming_family_home.jpg",
-      "galleryImages": [
-        "https://example.com/images/charming_family_home1.jpg",
-        "https://example.com/images/charming_family_home2.jpg"
-      ]
-    }
+      "_id": "60c72b2f9f1b2c001f1d2345",
+      "title": "Luxury Apartment",
+      "property": "Apartment",
+      "slug": "luxury-apartment",
+      "size": "1200 sqft",
+      "type": "Residential",
+      "price": 250000,
+      "address": "123 Main St, Downtown",
+      "location": {
+          "city": "Los Angeles",
+          "state": "CA",
+          "country": "USA",
+          "zipcode": "90001",
+          "type": "Point",
+          "formattedAddress": "123 Main St, Downtown, Los Angeles, CA 90001",
+          "coordinates": [-118.2437, 34.0522]
+      },
+      "builtIn": 2020,
+      "features": {
+          "bathrooms": 2,
+          "bedrooms": 3,
+          "furnished": true,
+          "corner": false
+      },
+      "details": "A luxurious apartment in the heart of the city with modern amenities.",
+      "agentDetails": {
+          "name": "John Doe",
+          "id": "60c72b2f9f1b2c001f1d2345",
+          "number": "123-456-7890"
+      },
+      "isFeatured": true,
+      "imageLinks": {
+          "mainImage": "http://example.com/images/luxury-apartment.jpg",
+          "galleryImages": [
+              "http://example.com/images/luxury-apartment-1.jpg",
+              "http://example.com/images/luxury-apartment-2.jpg"
+          ]
+      }
   },
   {
-    "title": "Modern Apartment",
-    "property": "Residential",
-    "size": "950 sqft",
-    "type": "Apartment",
-    "price": 450000,
-    "address": "456 Oak Rd, New York, NY",
-    "location": {
-      "city": "New York",
-      "state": "NY",
-      "country": "USA",
-      "zipcode": "10001",
-      "type": "Point",
-      "coordinates": [-73.9352, 40.7128],
-      "formattedAddress": "456 Oak Rd, New York, NY 10001",
-      "street": "Oak Rd",
-      "phase": "Phase 2",
-      "block": "Block B",
-      "lat": "40.7128",
-      "long": "-73.9352"
-    },
-    "builtIn": 2020,
-    "features": {
-      "bathrooms": 1,
-      "bedrooms": 1,
-      "furnished": true,
-      "corner": true
-    },
-    "details": "A modern apartment with stunning city views.",
-    "agentDetails": {
-      "name": "Bob Smith",
-      "id": "agent002",
-      "number": "555-5678"
-    },
-    "isFeatured": false,
-    "imageLinks": {
-      "mainImage": "https://example.com/images/modern_apartment.jpg",
-      "galleryImages": [
-        "https://example.com/images/modern_apartment1.jpg",
-        "https://example.com/images/modern_apartment2.jpg"
-      ]
-    }
+      "_id": "60c72b2f9f1b2c001f1d2346",
+      "title": "Charming Cottage",
+      "property": "Cottage",
+      "slug": "charming-cottage",
+      "size": "800 sqft",
+      "type": "Residential",
+      "price": 180000,
+      "address": "456 Oak St, Suburbia",
+      "location": {
+          "city": "Austin",
+          "state": "TX",
+          "country": "USA",
+          "zipcode": "78701",
+          "type": "Point",
+          "formattedAddress": "456 Oak St, Suburbia, Austin, TX 78701",
+          "coordinates": [-97.7431, 30.2672]
+      },
+      "builtIn": 2015,
+      "features": {
+          "bathrooms": 1,
+          "bedrooms": 2,
+          "furnished": false,
+          "corner": true
+      },
+      "details": "A cozy cottage perfect for small families or couples.",
+      "agentDetails": {
+          "name": "Jane Smith",
+          "id": "60c72b2f9f1b2c001f1d2346",
+          "number": "987-654-3210"
+      },
+      "isFeatured": false,
+      "imageLinks": {
+          "mainImage": "http://example.com/images/charming-cottage.jpg",
+          "galleryImages": [
+              "http://example.com/images/charming-cottage-1.jpg",
+              "http://example.com/images/charming-cottage-2.jpg"
+          ]
+      }
   },
   {
-    "title": "Luxury Condo",
-    "property": "Residential",
-    "size": "1200 sqft",
-    "type": "Condo",
-    "price": 750000,
-    "address": "789 Pine St, Miami, FL",
-    "location": {
-      "city": "Miami",
-      "state": "FL",
-      "country": "USA",
-      "zipcode": "33101",
-      "type": "Point",
-      "coordinates": [-80.1918, 25.7617],
-      "formattedAddress": "789 Pine St, Miami, FL 33101",
-      "street": "Pine St",
-      "phase": "Phase 3",
-      "block": "Block C",
-      "lat": "25.7617",
-      "long": "-80.1918"
-    },
-    "builtIn": 2022,
-    "features": {
-      "bathrooms": 2,
-      "bedrooms": 2,
-      "furnished": false,
-      "corner": false
-    },
-    "details": "A luxury condo with top-of-the-line amenities.",
-    "agentDetails": {
-      "name": "Charlie Davis",
-      "id": "agent003",
-      "number": "555-9101"
-    },
-    "isFeatured": true,
-    "imageLinks": {
-      "mainImage": "https://example.com/images/luxury_condo.jpg",
-      "galleryImages": [
-        "https://example.com/images/luxury_condo1.jpg",
-        "https://example.com/images/luxury_condo2.jpg"
-      ]
-    }
+      "_id": "60c72b2f9f1b2c001f1d2347",
+      "title": "Spacious Family Home",
+      "property": "House",
+      "slug": "spacious-family-home",
+      "size": "2000 sqft",
+      "type": "Residential",
+      "price": 350000,
+      "address": "789 Pine St, Family Neighborhood",
+      "location": {
+          "city": "Seattle",
+          "state": "WA",
+          "country": "USA",
+          "zipcode": "98101",
+          "type": "Point",
+          "formattedAddress": "789 Pine St, Family Neighborhood, Seattle, WA 98101",
+          "coordinates": [-122.3321, 47.6062]
+      },
+      "builtIn": 2010,
+      "features": {
+          "bathrooms": 3,
+          "bedrooms": 4,
+          "furnished": true,
+          "corner": false
+      },
+      "details": "A spacious home with a large backyard, perfect for family gatherings.",
+      "agentDetails": {
+          "name": "Alice Johnson",
+          "id": "60c72b2f9f1b2c001f1d2347",
+          "number": "555-123-4567"
+      },
+      "isFeatured": true,
+      "imageLinks": {
+          "mainImage": "http://example.com/images/spacious-family-home.jpg",
+          "galleryImages": [
+              "http://example.com/images/spacious-family-home-1.jpg",
+              "http://example.com/images/spacious-family-home-2.jpg"
+          ]
+      }
   },
   {
-    "title": "Cozy Studio",
-    "property": "Residential",
-    "size": "600 sqft",
-    "type": "Studio",
-    "price": 200000,
-    "address": "101 Maple St, Austin, TX",
-    "location": {
-      "city": "Austin",
-      "state": "TX",
-      "country": "USA",
-      "zipcode": "78701",
-      "type": "Point",
-      "coordinates": [-97.7431, 30.2672],
-      "formattedAddress": "101 Maple St, Austin, TX 78701",
-      "street": "Maple St",
-      "phase": "Phase 4",
-      "block": "Block D",
-      "lat": "30.2672",
-      "long": "-97.7431"
-    },
-    "builtIn": 2018,
-    "features": {
-      "bathrooms": 1,
-      "bedrooms": 0,
-      "furnished": true,
-      "corner": false
-    },
-    "details": "A cozy studio in a vibrant area.",
-    "agentDetails": {
-      "name": "Diana Clark",
-      "id": "agent004",
-      "number": "555-2345"
-    },
-    "isFeatured": false,
-    "imageLinks": {
-      "mainImage": "https://example.com/images/cozy_studio.jpg",
-      "galleryImages": [
-        "https://example.com/images/cozy_studio1.jpg",
-        "https://example.com/images/cozy_studio2.jpg"
-      ]
-    }
+      "_id": "60c72b2f9f1b2c001f1d2348",
+      "title": "Modern Condo",
+      "property": "Condo",
+      "slug": "modern-condo",
+      "size": "950 sqft",
+      "type": "Residential",
+      "price": 220000,
+      "address": "321 Birch St, City Center",
+      "location": {
+          "city": "New York",
+          "state": "NY",
+          "country": "USA",
+          "zipcode": "10001",
+          "type": "Point",
+          "formattedAddress": "321 Birch St, City Center, New York, NY 10001",
+          "coordinates": [-74.0060, 40.7128]
+      },
+      "builtIn": 2022,
+      "features": {
+          "bathrooms": 2,
+          "bedrooms": 2,
+          "furnished": true,
+          "corner": true
+      },
+      "details": "A modern condo with stunning views and high-end finishes.",
+      "agentDetails": {
+          "name": "Bob Brown",
+          "id": "60c72b2f9f1b2c001f1d2348",
+          "number": "111-222-3333"
+      },
+      "isFeatured": false,
+      "imageLinks": {
+          "mainImage": "http://example.com/images/modern-condo.jpg",
+          "galleryImages": [
+              "http://example.com/images/modern-condo-1.jpg",
+              "http://example.com/images/modern-condo-2.jpg"
+          ]
+      }
   },
   {
-    "title": "Spacious Loft",
-    "property": "Commercial",
-    "size": "2500 sqft",
-    "type": "Loft",
-    "price": 950000,
-    "address": "202 Birch Ave, Brooklyn, NY",
-    "location": {
-      "city": "Brooklyn",
-      "state": "NY",
-      "country": "USA",
-      "zipcode": "11201",
-      "type": "Point",
-      "coordinates": [-73.9903, 40.6937],
-      "formattedAddress": "202 Birch Ave, Brooklyn, NY 11201",
-      "street": "Birch Ave",
-      "phase": "Phase 5",
-      "block": "Block E",
-      "lat": "40.6937",
-      "long": "-73.9903"
-    },
-    "builtIn": 2015,
-    "features": {
-      "bathrooms": 2,
-      "bedrooms": 0,
-      "furnished": false,
-      "corner": true
-    },
-    "details": "A spacious loft perfect for creative work or office space.",
-    "agentDetails": {
-      "name": "Ethan White",
-      "id": "agent005",
-      "number": "555-6789"
-    },
-    "isFeatured": true,
-    "imageLinks": {
-      "mainImage": "https://example.com/images/spacious_loft.jpg",
-      "galleryImages": [
-        "https://example.com/images/spacious_loft1.jpg",
-        "https://example.com/images/spacious_loft2.jpg"
-      ]
-    }
+      "_id": "60c72b2f9f1b2c001f1d2349",
+      "title": "Cozy Bungalow",
+      "property": "Bungalow",
+      "slug": "cozy-bungalow",
+      "size": "1100 sqft",
+      "type": "Residential",
+      "price": 270000,
+      "address": "654 Cedar St, Quiet Area",
+      "location": {
+          "city": "Chicago",
+          "state": "IL",
+          "country": "USA",
+          "zipcode": "60601",
+          "type": "Point",
+          "formattedAddress": "654 Cedar St, Quiet Area, Chicago, IL 60601",
+          "coordinates": [-87.6298, 41.8781]
+      },
+      "builtIn": 2018,
+      "features": {
+          "bathrooms": 1,
+          "bedrooms": 3,
+          "furnished": true,
+          "corner": false
+      },
+      "details": "A cozy bungalow with a warm atmosphere, perfect for small families.",
+      "agentDetails": {
+          "name": "Chris Green",
+          "id": "60c72b2f9f1b2c001f1d2349",
+          "number": "444-555-6666"
+      },
+      "isFeatured": true,
+      "imageLinks": {
+          "mainImage": "http://example.com/images/cozy-bungalow.jpg",
+          "galleryImages": [
+              "http://example.com/images/cozy-bungalow-1.jpg",
+              "http://example.com/images/cozy-bungalow-2.jpg"
+          ]
+      }
   }
 ]
