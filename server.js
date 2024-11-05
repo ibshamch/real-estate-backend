@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db")
 const errorHandler = require("./middleware/error");
 const listingRouter = require("./route/listings");
+const usersRouter = require("./route/users");
 const agentRouter = require("./route/agents")
 const testomonialsRouter = require("./route/testomonials");
 const morgan = require("morgan");
@@ -27,6 +28,7 @@ if (process.env.NODE_ENV === "development") {
 app.use("/api/listings", listingRouter);
 app.use("/api/satisfiedClients", testomonialsRouter);
 app.use("/api/agents" , agentRouter)
+app.use("/api/users" , usersRouter)
 
 app.use(errorHandler)
 
