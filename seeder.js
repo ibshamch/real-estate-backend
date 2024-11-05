@@ -7,6 +7,7 @@ dotenv.config({ path: "./config/config.env" });
 
 // Load models
 const listingsModel = require("./model/listings");
+const usersModel = require("./model/users");
 
 // Connect to DB
 mongoose.connect(process.env.MONGO_URI)
@@ -15,11 +16,13 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Read the JSON Files
 const listings = JSON.parse(fs.readFileSync(`${__dirname}/data/listings.json`, 'utf-8'));
+const users = JSON.parse(fs.readFileSync(`${__dirname}/data/users.json`, 'utf-8'));
 
 // Import into DB
 const importData = async () => {
     try {
         await listingsModel.create(listings);
+        await usersModel.create(users)
         console.log('Data imported...');
         process.exit();
     } catch (error) {
@@ -32,6 +35,7 @@ const importData = async () => {
 const deleteData = async () => {
     try {
         await listingsModel.deleteMany();
+        await usersModel.deleteMany();
         console.log('Data destroyed...');
         process.exit();
     } catch (error) {

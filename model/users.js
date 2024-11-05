@@ -1,24 +1,29 @@
 const mongoose = require("mongoose");
+
 const userSchema = mongoose.Schema({
-    name : {
+    name: {
         type: String,
-        required: [true, "Please add a email for the user"]
+        required: [true, "Please add a name for the user"]
+    },
+    email: {
+        type: String,
+        required: [true, "Please add an email for the user"],
+        unique: true  // Optional: Enforce unique email addresses
     },
     password: {
         type: String,
-        required: [true,"Please add password for the user"]
+        required: [true, "Please add a password for the user"]
     },
-    createdAt : {
+    createdAt: {
         type: Date,
         default: Date.now
     },
-    listing: {
-        type: mongoose.Schema.ObjectId,
-        ref : 'Listing',
-        required : true
-    }
+    listings: [
+        {
+            type: mongoose.Schema.ObjectId,
+            ref: 'Listing',
+        }
+    ]
 });
 
-
-
-module.exports = mongoose.model("User",userSchema);
+module.exports = mongoose.model("User", userSchema);
