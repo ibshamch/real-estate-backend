@@ -5,7 +5,7 @@ const asyncHandler = require("./../middleware/async");
 /*
  * @des Get all users  
     @route GET /api/users
- * @route GET /api/listings/:listingid/user
+ * @route GET /api/listings/:listingid/users
  * @access Public
  */
 

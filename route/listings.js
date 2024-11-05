@@ -1,6 +1,11 @@
 const express = require("express");
-const router = express.Router();
 const { getAllListings,createNewListing,updateListing,deleteListing,deleteAllListings ,getListingsByAgentId,getListing,  getListingsInRadius} = require("../controllers/listings");
+
+// Include other resource router
+const usersRouter = require("./../route/users");
+const router = express.Router();
+// Re-route into other resource routers 
+router.use("/:listingId/users",usersRouter)
 
 router.get("/", getAllListings);
 
