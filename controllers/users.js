@@ -18,7 +18,10 @@ exports.getAllUsers = asyncHandler(async (req,res,next)=> {
         query = usersModel.find({listings:req.params.listingId})
     }else{
     // @route GET /api/users
-        query = usersModel.find();
+        query = usersModel.find().populate({
+            path: 'listings',
+            select : 'title'
+        })
     }
 
     const users = await query;

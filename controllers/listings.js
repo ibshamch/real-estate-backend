@@ -1,5 +1,6 @@
 const ErrorResponse = require("./../utils/errorResponse");
 const listingModel = require("./../model/listings");
+const UserModel = require("./../model/users")
 const asyncHandler = require("./../middleware/async");
 const geocoder = require("../utils/geocoder");
 
@@ -31,7 +32,7 @@ const getAllListings =   asyncHandler(
     queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
 
 // Finding resource
-    query = listingModel.find(JSON.parse(queryStr));
+    query = listingModel.find(JSON.parse(queryStr)).populate("user");
 
 
 // Select Fields 
@@ -155,18 +156,27 @@ asyncHandler(
 
 
 const deleteListing = asyncHandler(
-  async(req,res,next) => {
-    const listing = await listingModel.findByIdAndDelete(req.params.id);
-    if(!listing){
-      next(new ErrorResponse("Server Error from Error Response", 500))
-    }else{
+  async (req, res, next) => {
+   
+      const listing = await listingModel.findByIdAndDelete(req.params.id);
+
+      if (!listing) {
+        return next(new ErrorResponse("Listing not found", 404));
+      }
+
+      // Directly use the User model to delete related users
+      await UserModel.deleteMany({ listings: listing._id });
+
       res.status(200).json({
-        success: true, 
-        message: "Listing deleted Successfully"
-      })
-    }
-  }  
-)
+        success: true,
+        message: "Listing deleted successfully",
+        data: {},
+      });
+    } 
+  
+);
+
+
 
 const deleteAllListings = asyncHandler(
   async(req,res,next) => {

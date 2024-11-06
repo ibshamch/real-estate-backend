@@ -106,6 +106,14 @@ const listingsSchema = new mongoose.Schema({
       default: [],   // Default to an empty array if no gallery images provided
     },
   },
+  
+},{
+  toJSON : {
+    virtuals : true
+  },
+  toObject : {
+    virtuals : true
+  }
 });
 
 
@@ -142,7 +150,22 @@ next();
 })
 
 
+// // Cascade delete users if listing is deleted 
+// listingsSchema.pre("remove", async function (next) {
+//   await this.model("User").deleteMany({ listings: this._id });
+//   next();
+// });
 
+
+
+
+// Reverse populate with virtuals
+listingsSchema.virtual("user", {
+  ref: "User",              // The model to reference (User model)
+  localField: "_id",        // Field in the Listing model
+  foreignField: "listings", // Field in the User model
+  justOne: false            // Set to false to get an array (in case of multiple matches)
+});
 
 
 module.exports = mongoose.model('Listing', listingsSchema);
