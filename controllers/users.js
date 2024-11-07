@@ -1,10 +1,11 @@
 const ErrorResponse = require("./../utils/errorResponse");
 const usersModel = require("./../model/users");
+const listingModel = require("../model/listings");
 const asyncHandler = require("./../middleware/async");
 
 /*
  * @des Get all users  
-    @route GET /api/users
+   @route GET /api/users
  * @route GET /api/listings/:listingid/users
  * @access Public
  */
@@ -33,3 +34,57 @@ exports.getAllUsers = asyncHandler(async (req,res,next)=> {
     })
 
 })
+
+
+
+/*
+ *  @des Get Single user  
+    @route GET /api/user/:id
+ *  @access Public
+ */
+
+
+    exports.getUser = asyncHandler(async (req,res,next)=> {
+        const user = await usersModel.findById(req.params.userId).populate({
+            path : "listings",
+            select : "title description"
+        });
+        if(!user){
+            return next(new ErrorResponse(`No user with the id of ${req.params.id}`),404)
+        }
+
+        res.status(200).json({
+            success:true,
+            count:user.length,
+            data:user
+        })
+    
+    })
+    
+
+
+    /*
+ *  @des Add user  
+    @route POST /api/listings/:listingId/users
+ *  @access Private
+ */
+
+
+    exports.addUser = asyncHandler(async (req, res, next) => {
+        req.body.listings = req.params.listingId;
+    
+        const listing = await listingModel.findById(req.params.listingId);
+    
+        if (!listing) {
+            return next(new ErrorResponse(`No listing with the id of ${req.params.listingId}`, 404));
+        }
+    
+        const user = await usersModel.create(req.body);
+    
+        res.status(200).json({
+            success: true,
+            data: user
+        });
+    });
+    
+    
