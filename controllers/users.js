@@ -87,4 +87,54 @@ exports.getAllUsers = asyncHandler(async (req,res,next)=> {
         });
     });
     
+
+
+
+
+        /*
+ *  @des Update user  
+    @route PUT /api/users/:user
+ *  @access Private
+ */
+
+
+    exports.updateCourse = asyncHandler(async (req, res, next) => {
+        
+    
+        const user = await usersModel.findByIdAndUpdate(req.params.userId,req.body,{
+            new:true,
+            runValidators: true 
+        }); 
+    
+
+        if(!user){
+            new ErrorResponse(`No course with id of ${req.params.userId}`), 404
+        }
+
+        res.status(200).json({
+            success: true,
+            data: user
+        });
+    });
+    
+        /*
+ *  @des Delete user  
+    @route DELETE /api/users/:user
+ *  @access Private
+ */
+    // Maybe we update this.
+    exports.deleteUser = asyncHandler(async (req, res, next) => {
+        const user = await usersModel.findByIdAndDelete(req.params.userId);
+    
+        if (!user) {
+            return next(new ErrorResponse(`No user with id of ${req.params.userId}`, 404));
+        }
+    
+    
+        res.status(200).json({
+            success: true,
+            data: {}
+        });
+    });
+    
     
